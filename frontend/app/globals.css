@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f8f8;
+  --foreground: #202020;
+
+  /* Pokemon battle palette */
+  --pkmn-sky-top: #6dc2ff;
+  --pkmn-sky-bot: #b6e3ff;
+  --pkmn-grass: #7ac74c;
+  --pkmn-grass-dark: #4e9a3a;
+  --pkmn-dirt: #c8a35a;
+
+  --pkmn-box-bg: #f8f8f8;
+  --pkmn-box-shadow: #585858;
+  --pkmn-box-border: #202020;
+  --pkmn-box-inner: #f0d8a8;
+
+  --pkmn-text: #202020;
+  --pkmn-text-muted: #585858;
+
+  --pkmn-hp-green: #58d868;
+  --pkmn-hp-yellow: #f8d030;
+  --pkmn-hp-red: #f04030;
+  --pkmn-hp-track: #404040;
+
+  --pkmn-accent-blue: #3858c8;
+  --pkmn-accent-red: #d83030;
+
+  /* Per-section type colors — used for the home menu buttons + sub-page accents.
+     Loosely modeled on Hoenn's starter trio + a gold "badge" yellow. */
+  --pkmn-exp: #f6b800;      /* gym-badge gold */
+  --pkmn-exp-dark: #b88400;
+  --pkmn-proj: #e23b3b;     /* poké-ball red / fire */
+  --pkmn-proj-dark: #a01f1f;
+  --pkmn-about: #2f7fe6;    /* trainer-card blue / water */
+  --pkmn-about-dark: #1f5aa8;
+  --pkmn-skills: #4ec74e;   /* grass green */
+  --pkmn-skills-dark: #2f8f2f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-pkmn-sky-top: var(--pkmn-sky-top);
+  --color-pkmn-sky-bot: var(--pkmn-sky-bot);
+  --color-pkmn-grass: var(--pkmn-grass);
+  --color-pkmn-grass-dark: var(--pkmn-grass-dark);
+  --color-pkmn-dirt: var(--pkmn-dirt);
+  --color-pkmn-box-bg: var(--pkmn-box-bg);
+  --color-pkmn-box-shadow: var(--pkmn-box-shadow);
+  --color-pkmn-box-border: var(--pkmn-box-border);
+  --color-pkmn-box-inner: var(--pkmn-box-inner);
+  --color-pkmn-text: var(--pkmn-text);
+  --color-pkmn-text-muted: var(--pkmn-text-muted);
+  --color-pkmn-hp-green: var(--pkmn-hp-green);
+  --color-pkmn-hp-yellow: var(--pkmn-hp-yellow);
+  --color-pkmn-hp-red: var(--pkmn-hp-red);
+  --color-pkmn-hp-track: var(--pkmn-hp-track);
+  --color-pkmn-accent-blue: var(--pkmn-accent-blue);
+  --color-pkmn-accent-red: var(--pkmn-accent-red);
+  --color-pkmn-exp: var(--pkmn-exp);
+  --color-pkmn-exp-dark: var(--pkmn-exp-dark);
+  --color-pkmn-proj: var(--pkmn-proj);
+  --color-pkmn-proj-dark: var(--pkmn-proj-dark);
+  --color-pkmn-about: var(--pkmn-about);
+  --color-pkmn-about-dark: var(--pkmn-about-dark);
+  --color-pkmn-skills: var(--pkmn-skills);
+  --color-pkmn-skills-dark: var(--pkmn-skills-dark);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-pixel: var(--font-pixel);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-pixel), "Courier New", monospace;
+}
+
+/* Pixel-art sprite rendering */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Pokemon-style dialog box — thick rounded border with inner double-line */
+.pkmn-box {
+  background: var(--pkmn-box-bg);
+  color: var(--pkmn-text);
+  border: 4px solid var(--pkmn-box-border);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 0 0 4px var(--pkmn-box-bg),
+    inset 0 0 0 6px var(--pkmn-box-border),
+    4px 4px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Pokemon HP card — slanted parallelogram-ish info card */
+.pkmn-hud {
+  background: var(--pkmn-box-bg);
+  color: var(--pkmn-text);
+  border: 3px solid var(--pkmn-box-border);
+  border-radius: 6px;
+  box-shadow:
+    inset 0 0 0 2px var(--pkmn-box-bg),
+    inset 0 0 0 3px var(--pkmn-box-border),
+    3px 3px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+/* HP bar track + fill */
+.pkmn-hp-track {
+  background: var(--pkmn-hp-track);
+  border: 1px solid var(--pkmn-box-border);
+  border-radius: 3px;
+  overflow: hidden;
+  height: 8px;
+}
+.pkmn-hp-fill {
+  height: 100%;
+  background: var(--pkmn-hp-green);
+  transition: width 600ms ease-out;
+}
+
+/* Battle platform — soft "trampled" highlight ring under each sprite so the
+   Pokémon read clearly against the textured grass field. */
+.pkmn-platform {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 230, 160, 0.55) 0%,
+    rgba(190, 220, 130, 0.45) 40%,
+    rgba(80, 140, 60, 0.35) 65%,
+    transparent 78%
+  );
+  box-shadow:
+    inset 0 -2px 4px rgba(0, 0, 0, 0.18),
+    0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Sky gradient backdrop for battle scene */
+.pkmn-sky {
+  background: linear-gradient(
+    180deg,
+    var(--pkmn-sky-top) 0%,
+    var(--pkmn-sky-bot) 100%
+  );
+}
+
+/* Selected menu pointer triangle */
+.pkmn-pointer::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 0.5rem;
+  color: var(--pkmn-accent-red);
+  transform: translateY(-1px);
+}
+
+/* Subtle blink for the cursor / "press A to continue" arrow */
+@keyframes pkmn-blink {
+  0%, 60% { opacity: 1; }
+  61%, 100% { opacity: 0; }
+}
+.pkmn-blink {
+  animation: pkmn-blink 1s steps(2, end) infinite;
+}
+
+/* Slow cloud drift across the Hoenn scene */
+@keyframes pkmn-drift {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(40px); }
+}
+
+/* "3DS-ish" console chassis around the battle window — turquoise plastic feel */
+.pkmn-console {
+  background: linear-gradient(180deg, #2aa6c4 0%, #1d8aa8 100%);
+  border: 3px solid #0e3f55;
+  border-radius: 18px;
+  padding: 14px;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -3px 0 rgba(0, 0, 0, 0.25),
+    6px 8px 0 rgba(0, 0, 0, 0.3);
+}
+.pkmn-console-screen {
+  background: #0e3f55;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Chunky colored menu button — used on the home menu and BACK link.
+   Pass --btn-fg / --btn-bg / --btn-dark via inline style. */
+.pkmn-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 8px;
+  min-width: 0;
+  background: var(--btn-bg, var(--pkmn-box-bg));
+  color: var(--btn-fg, var(--pkmn-text));
+  border: 3px solid var(--pkmn-box-border);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -3px 0 var(--btn-dark, rgba(0, 0, 0, 0.25)),
+    3px 3px 0 rgba(0, 0, 0, 0.3);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+}
+.pkmn-btn:hover,
+.pkmn-btn:focus-visible {
+  transform: translate(1px, 1px);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -3px 0 var(--btn-dark, rgba(0, 0, 0, 0.25)),
+    2px 2px 0 rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+.pkmn-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 0 var(--btn-dark, rgba(0, 0, 0, 0.25)),
+    1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Colored section header strip — used at the top of sub-page cards. */
+.pkmn-section-stripe {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--stripe, var(--pkmn-accent-blue));
+}
