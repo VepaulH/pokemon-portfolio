@@ -16,6 +16,8 @@ type Props = {
   titleIcon?: ReactNode;
   /** Dim factor for the Hoenn backdrop (0-1). Default 0.45 keeps content legible. */
   bgDim?: number;
+  /** Where the BACK button links. Defaults to "/". */
+  backHref?: string;
   children: ReactNode;
 };
 
@@ -30,6 +32,7 @@ export function PageFrame({
   accentDark,
   titleIcon,
   bgDim = 0.45,
+  backHref = "/",
   children,
 }: Props) {
   return (
@@ -68,7 +71,7 @@ export function PageFrame({
             </div>
 
             <Link
-              href="/"
+              href={backHref}
               className="pkmn-btn text-[11px] sm:text-[12px] tracking-wider"
               style={
                 {

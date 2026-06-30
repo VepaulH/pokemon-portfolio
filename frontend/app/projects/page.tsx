@@ -53,6 +53,15 @@ const projects: Project[] = [
     links: [{ label: "CODE", href: "https://github.com/VepaulH" }],
     logoInitial: "S",
   },
+  {
+    no: "#004",
+    name: "TOUCHGRASS",
+    tagline: "Nature scavenger hunt powered by AI image recognition — go touch grass.",
+    types: ["REACT", "GEMINI API", "JAVASCRIPT"],
+    description:
+      "Built in 36 hours at KnightHacks VIII. Led front-end development — home page, camera upload interface, leaderboard screen, and dropdown navigation. Integrated display logic for Gemini API results that identify real-world objects from user photos and return match feedback in real time.",
+    logoInitial: "T",
+  },
 ];
 
 const typeColors: Record<string, string> = {
@@ -69,6 +78,8 @@ const typeColors: Record<string, string> = {
   REDIS: "bg-pkmn-accent-red text-white",
   "FETCH.AI": "bg-pkmn-accent-blue text-white",
   FOUNDER: "bg-pkmn-hp-yellow text-pkmn-text",
+  "GEMINI API": "bg-pkmn-accent-blue text-white",
+  JAVASCRIPT: "bg-pkmn-hp-yellow text-pkmn-text",
 };
 
 function ProjectLogo({ domain, initial }: { domain?: string; initial?: string }) {

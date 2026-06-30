@@ -1,103 +1,135 @@
 import { CSSProperties } from "react";
-import { PageFrame } from "../_components/PageFrame";
-import { TrainerCardIcon } from "../_components/MenuIcons";
+import { HoennScene } from "../_components/HoennScene";
+import { DialogBox } from "../_components/DialogBox";
+import { MenuBox, type MenuOption } from "../_components/MenuBox";
+import {
+  TrainerCardIcon,
+  ClubIcon,
+  ClimbIcon,
+  MusicIcon,
+  PokedexIcon,
+  TrophyIcon,
+  BackArrowIcon,
+} from "../_components/MenuIcons";
+import Link from "next/link";
 
 const ACCENT = "var(--pkmn-about)";
 const ACCENT_DARK = "var(--pkmn-about-dark)";
 
-const trainer = {
-  name: "VEPAUL HARIPRASHAD",
-  title: "RETURNING @ BNY · FOUNDER @ ARCUS · RESEARCH @ UCF IAI",
-  hometown: "ORLANDO, FL",
-  age: "20",
-  startedJourney: "2024",
-  favoriteType: "DRAGON",
-  contact: {
-    email: "vehcollege@gmail.com",
-    github: "github.com/VepaulH",
-    linkedin: "linkedin.com/in/vepaulh",
+const menuOptions: [MenuOption, MenuOption, MenuOption, MenuOption] = [
+  {
+    label: "TRAINER CARD",
+    href: "/about/trainer",
+    bg: "var(--pkmn-about)",
+    dark: "var(--pkmn-about-dark)",
+    fg: "#ffffff",
+    icon: <TrainerCardIcon className="w-5 h-5" />,
   },
-};
-
-const bio = [
-  "I'm a CS + Data Science student at UCF's Burnett Honors College (GPA: 3.88). Right now I'm building Arcus, a platform for student founders, while serving as VP of the American Statistical Association chapter at UCF — two roles that keep me equally close to code and to people.",
-  "This fall I'm returning to BNY, and I recently wrapped up AI research that's currently under review at NeurIPS. My work spans multi-agent systems, anomaly detection, and LLM weight analysis — I'm drawn to problems where the engineering decisions actually matter.",
-  "I'm looking for SWE or Data Science roles where I can keep building useful products and learning from people who've been doing this longer than I have. If you're working on something interesting in tech, data, or the student founder space, let's connect.",
+  {
+    label: "CLUBS",
+    href: "/about/clubs",
+    bg: "var(--pkmn-skills)",
+    dark: "var(--pkmn-skills-dark)",
+    fg: "#0e2a0e",
+    icon: <ClubIcon className="w-5 h-5" />,
+  },
+  {
+    label: "HOBBIES",
+    href: "/about/hobbies",
+    bg: "var(--pkmn-exp)",
+    dark: "var(--pkmn-exp-dark)",
+    fg: "#3a2200",
+    icon: <ClimbIcon className="w-5 h-5" />,
+  },
+  {
+    label: "MUSIC",
+    href: "/about/music",
+    bg: "var(--pkmn-proj)",
+    dark: "var(--pkmn-proj-dark)",
+    fg: "#ffffff",
+    icon: <MusicIcon className="w-5 h-5" />,
+  },
 ];
 
-export default function AboutPage() {
+
+export default function AboutMenuPage() {
   return (
-    <PageFrame
-      title="ABOUT ME"
-      subtitle="PROFESSOR OAK'S INTRODUCTION"
-      accent={ACCENT}
-      accentDark={ACCENT_DARK}
-      titleIcon={<TrainerCardIcon className="w-6 h-6" />}
-    >
-      <div className="grid gap-4 md:grid-cols-3">
-        {/* Trainer card */}
-        <aside className="pkmn-box px-5 py-4 md:col-span-1 flex flex-col gap-3 relative">
-          <div
-            className="pkmn-section-stripe absolute top-0 left-0 right-0 rounded-none"
-            style={{ "--stripe": ACCENT } as CSSProperties}
-          />
-          <div className="flex items-center gap-2 mt-1">
-            <span
-              className="inline-flex items-center justify-center w-8 h-8 rounded-md border-2 border-pkmn-box-border"
-              style={{ background: ACCENT, color: "white" }}
+    <>
+      <HoennScene dim={0.45} blur={3} />
+      <div className="flex-1 flex items-center justify-center px-4 py-8">
+        <div className="pkmn-console w-full max-w-[860px]">
+          <div className="pkmn-console-screen">
+            <div
+              className="relative w-full overflow-hidden rounded-sm flex items-center justify-center"
+              style={{ aspectRatio: "5 / 3", background: "rgba(20,40,80,0.55)" }}
             >
-              <TrainerCardIcon className="w-5 h-5" />
-            </span>
-            <h2 className="text-[12px] tracking-wider">TRAINER CARD</h2>
+              <div
+                className="pkmn-box px-6 py-5 text-center"
+                style={{ "--stripe": ACCENT } as CSSProperties}
+              >
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <span
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-md border-2 border-pkmn-box-border"
+                    style={{ background: ACCENT, color: "white" }}
+                  >
+                    <TrainerCardIcon className="w-6 h-6" />
+                  </span>
+                  <span className="text-[16px] sm:text-[20px] tracking-widest">ABOUT ME</span>
+                </div>
+                <p className="text-[10px] sm:text-[11px] text-pkmn-text-muted">
+                  CHOOSE A CATEGORY
+                </p>
+              </div>
+            </div>
           </div>
-          <div
-            className="aspect-square w-full max-w-[180px] mx-auto bg-pkmn-box-inner rounded flex items-center justify-center text-[10px] text-pkmn-text-muted text-center px-2"
-            style={{ border: `3px solid var(--pkmn-about-dark)` }}
-          >
-            DROP YOUR PHOTO / AVATAR HERE
-          </div>
-          <dl className="text-[11px] space-y-1.5">
-            <Row label="NAME" value={trainer.name} />
-            <Row label="TITLE" value={trainer.title} />
-            <Row label="FROM" value={trainer.hometown} />
-            <Row label="AGE" value={trainer.age} />
-            <Row label="JOURNEY" value={trainer.startedJourney} />
-            <Row label="FAV TYPE" value={trainer.favoriteType} />
-          </dl>
 
-          <div
-            className="mt-2 pt-3 space-y-1.5 text-[11px]"
-            style={{ borderTop: `2px solid ${ACCENT}` }}
-          >
-            <Row label="EMAIL" value={trainer.contact.email} />
-            <Row label="GITHUB" value={trainer.contact.github} />
-            <Row label="LINKED" value={trainer.contact.linkedin} />
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-9 gap-3">
+            <div className="sm:col-span-5">
+              <DialogBox showContinueArrow>
+                What would you like to know about{" "}
+                <span style={{ color: ACCENT }}>VEPAUL</span>?
+              </DialogBox>
+            </div>
+            <div className="sm:col-span-4 flex flex-col gap-2">
+              <MenuBox options={menuOptions} />
+              <div className="pkmn-box px-3 py-3 w-full">
+                <div className="grid grid-cols-2 gap-2.5">
+                  <Link
+                    href="/about/pokemon"
+                    className="pkmn-btn text-[9px] sm:text-[10px] tracking-wider"
+                    style={{ "--btn-bg": "var(--pkmn-accent-red)", "--btn-fg": "#ffffff", "--btn-dark": "#8b0000" } as CSSProperties}
+                  >
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-md shrink-0" style={{ background: "rgba(255,255,255,0.85)", color: "#8b0000" }}>
+                      <PokedexIcon className="w-4 h-4" />
+                    </span>
+                    <span className="whitespace-nowrap leading-none">POKéDEX</span>
+                  </Link>
+                  <Link
+                    href="/about/wins"
+                    className="pkmn-btn text-[9px] sm:text-[10px] tracking-wider"
+                    style={{ "--btn-bg": "var(--pkmn-hp-yellow)", "--btn-fg": "#3a2200", "--btn-dark": "#b89000" } as CSSProperties}
+                  >
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-md shrink-0" style={{ background: "rgba(255,255,255,0.85)", color: "#b89000" }}>
+                      <TrophyIcon className="w-4 h-4" />
+                    </span>
+                    <span className="whitespace-nowrap leading-none">WINS</span>
+                  </Link>
+                  <Link
+                    href="/"
+                    className="pkmn-btn col-span-2 text-[9px] sm:text-[10px] tracking-wider"
+                    style={{ "--btn-bg": "var(--pkmn-box-border)", "--btn-fg": "#ffffff", "--btn-dark": "#000000" } as CSSProperties}
+                  >
+                    <span className="inline-flex items-center justify-center w-6 h-6 rounded-md shrink-0" style={{ background: "rgba(255,255,255,0.85)", color: "#000000" }}>
+                      <BackArrowIcon className="w-4 h-4" />
+                    </span>
+                    <span className="whitespace-nowrap leading-none">BACK TO HOME</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
-        </aside>
-
-        {/* Bio */}
-        <article className="pkmn-box px-5 py-4 md:col-span-2 space-y-3 text-[12px] sm:text-[14px] leading-relaxed relative">
-          <div
-            className="pkmn-section-stripe absolute top-0 left-0 right-0 rounded-none"
-            style={{ "--stripe": ACCENT } as CSSProperties}
-          />
-          <h2 className="text-[12px] sm:text-[14px] tracking-wider mt-1">
-            <span style={{ color: ACCENT_DARK }}>▶</span> MY STORY
-          </h2>
-          {bio.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </article>
+        </div>
       </div>
-    </PageFrame>
-  );
-}
-
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex justify-between gap-3">
-      <dt className="text-pkmn-text-muted">{label}</dt>
-      <dd className="text-right break-all">{value}</dd>
-    </div>
+    </>
   );
 }
