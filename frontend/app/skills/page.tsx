@@ -37,14 +37,20 @@ const typeStyles: Record<SkillType, string> = {
 };
 
 const moves: Move[] = [
-  { name: "TYPESCRIPT", type: "LANGUAGE", pp: 4, ppMax: 10, power: 85 },
-  { name: "PYTHON",     type: "LANGUAGE", pp: 5, ppMax: 10, power: 80 },
-  { name: "REACT",      type: "FRONTEND", pp: 4, ppMax: 10, power: 88 },
-  { name: "NEXT.JS",    type: "FRONTEND", pp: 2, ppMax: 10, power: 75 },
-  { name: "NODE.JS",    type: "BACKEND",  pp: 4, ppMax: 10, power: 80 },
-  { name: "POSTGRES",   type: "DATA",     pp: 3, ppMax: 10, power: 70 },
-  { name: "DOCKER",     type: "INFRA",    pp: 3, ppMax: 10, power: 65 },
-  { name: "GIT",        type: "TOOLING",  pp: 6, ppMax: 10, power: 90 },
+  { name: "PYTHON",      type: "LANGUAGE", pp: 3, ppMax: 10, power: 90 },
+  { name: "TYPESCRIPT",  type: "LANGUAGE", pp: 2, ppMax: 10, power: 85 },
+  { name: "JAVA",        type: "LANGUAGE", pp: 2, ppMax: 10, power: 75 },
+  { name: "C",           type: "LANGUAGE", pp: 2, ppMax: 10, power: 70 },
+  { name: "SQL",         type: "LANGUAGE", pp: 2, ppMax: 10, power: 72 },
+  { name: "REACT",       type: "FRONTEND", pp: 2, ppMax: 10, power: 88 },
+  { name: "NEXT.JS",     type: "FRONTEND", pp: 2, ppMax: 10, power: 85 },
+  { name: "TAILWIND",    type: "FRONTEND", pp: 2, ppMax: 10, power: 80 },
+  { name: "FASTAPI",     type: "BACKEND",  pp: 2, ppMax: 10, power: 80 },
+  { name: "POSTGRESQL",  type: "DATA",     pp: 2, ppMax: 10, power: 72 },
+  { name: "PYTORCH",     type: "DATA",     pp: 2, ppMax: 10, power: 78 },
+  { name: "NUMPY/PANDAS",type: "DATA",     pp: 2, ppMax: 10, power: 85 },
+  { name: "SLURM/LINUX", type: "INFRA",    pp: 1, ppMax: 10, power: 70 },
+  { name: "GITHUB",      type: "TOOLING",  pp: 3, ppMax: 10, power: 90 },
 ];
 
 export default function SkillsPage() {

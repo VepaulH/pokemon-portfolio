@@ -23,23 +23,28 @@ type Project = {
 const projects: Project[] = [
   {
     no: "#001",
-    name: "PROJECT NAME",
-    tagline: "One-sentence pitch — what does it do, who is it for.",
-    types: ["NEXT.JS", "TYPESCRIPT", "POSTGRES"],
+    name: "ARCUS",
+    tagline: "A platform connecting student founders with people, tools, and opportunities.",
+    types: ["FOUNDER", "NEXT.JS", "TYPESCRIPT"],
     description:
-      "Longer description. What you built, the hardest problem, what you learned. Two or three sentences max — keep it scannable.",
-    links: [
-      { label: "LIVE", href: "#" },
-      { label: "CODE", href: "#" },
-    ],
+      "Most student founders fail before they start due to a lack of network, structure, and resources. Arcus bridges that gap — connecting them with the right people and opportunities at every stage of their journey. Currently building and growing the platform from Orlando, FL.",
   },
   {
     no: "#002",
-    name: "SECOND PROJECT",
-    tagline: "Another one-liner.",
-    types: ["PYTHON", "ML"],
-    description: "Description. Description. Description.",
-    links: [{ label: "CODE", href: "#" }],
+    name: "OBI",
+    tagline: "Audio similarity search platform — find sounds by sound or description.",
+    types: ["NEXT.JS", "TYPESCRIPT", "FASTAPI", "QDRANT"],
+    description:
+      "Built foundational frontend features including login/signup, profile management, search history, and interactive search controls. Curated 1,000+ audio samples and developed a demo-ready platform for 50+ testers built around CLAP audio/text embeddings and Qdrant vector search.",
+  },
+  {
+    no: "#003",
+    name: "SIGNALFORGE",
+    tagline: "Multi-agent prediction system for Kalshi prediction markets.",
+    types: ["PYTHON", "CLAUDE API", "REDIS", "FETCH.AI"],
+    description:
+      "Architected an orchestration agent that classifies user queries by category (financial, sports, culture) and routes them to specialized agents. Implemented real-time Browserbase scraping pipelines with Redis caching; independently built the orchestrator and two of three category agents at UC Berkeley AI Hackathon 2026.",
+    links: [{ label: "CODE", href: "https://github.com/VepaulH" }],
   },
 ];
 
@@ -51,6 +56,12 @@ const typeColors: Record<string, string> = {
   PYTHON: "bg-pkmn-hp-yellow text-pkmn-text",
   POSTGRES: "bg-pkmn-accent-red text-white",
   ML: "bg-pkmn-grass-dark text-white",
+  FASTAPI: "bg-pkmn-grass-dark text-white",
+  QDRANT: "bg-pkmn-accent-red text-white",
+  "CLAUDE API": "bg-pkmn-box-border text-white",
+  REDIS: "bg-pkmn-accent-red text-white",
+  "FETCH.AI": "bg-pkmn-accent-blue text-white",
+  FOUNDER: "bg-pkmn-hp-yellow text-pkmn-text",
 };
 
 export default function ProjectsPage() {

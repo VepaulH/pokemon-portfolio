@@ -21,22 +21,76 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
-    badge: "SOFTWARE ENGINEER",
-    org: "COMPANY NAME",
-    location: "CITY, ST",
-    dateRange: "MMM YYYY — PRESENT",
+    badge: "SOFTWARE ENGINEER INTERN",
+    org: "BANK OF NEW YORK",
+    location: "ORLANDO, FL",
+    dateRange: "JUN 2026 — PRESENT",
     bullets: [
-      "First impact bullet — what you shipped and why it mattered.",
-      "Second bullet — a metric, a scale, a number.",
-      "Third bullet — collaboration, leadership, or scope.",
+      "Returning for a second internship (Fall 2026) after delivering a high-impact multi-agent incident response system in the spring term.",
     ],
   },
   {
-    badge: "INTERN / EARLIER ROLE",
-    org: "PREVIOUS COMPANY",
-    location: "CITY, ST",
-    dateRange: "MMM YYYY — MMM YYYY",
-    bullets: ["Bullet one.", "Bullet two."],
+    badge: "FOUNDER",
+    org: "ARCUS",
+    location: "ORLANDO, FL",
+    dateRange: "JUN 2026 — PRESENT",
+    bullets: [
+      "Building a platform for student founders that connects them with the right people, tools, and opportunities at every stage of their journey.",
+      "Identified the core problem: most student founders fail before they start due to a lack of network, structure, and resources to execute.",
+    ],
+  },
+  {
+    badge: "EXTERN",
+    org: "SERVICENOW",
+    location: "REMOTE",
+    dateRange: "JUN 2026 — PRESENT",
+    bullets: [
+      "Selected for a ServiceNow externship providing exposure to modern development and infrastructure ecosystems.",
+      "Developing proficiency in enterprise technology tools, platform workflows, and industry best practices through hands-on learning.",
+    ],
+  },
+  {
+    badge: "SOFTWARE ENGINEER INTERN",
+    org: "BANK OF NEW YORK",
+    location: "ORLANDO, FL",
+    dateRange: "JAN 2026 — MAY 2026",
+    bullets: [
+      "Delivered a final demo and system design overview to 50+ BNY employees as part of a 4-person team, fielding live technical questions on architecture decisions and implementation tradeoffs.",
+      "Built real-time threshold-based monitoring across 4 services to surface anomalous behavior during fault-injection tests, triggering a structured incident-response pipeline upon detection.",
+      "Developed a two-stage response system: an initial agent packaged AppDynamics data to suggest targeted fixes, escalating to a three-agent system on failure that used Prometheus context to surface root causes, propose alternatives, and query Git history for deeper analysis.",
+    ],
+  },
+  {
+    badge: "SOFTWARE ENGINEER INTERN",
+    org: "INSTITUTE FOR SIMULATION & TRAINING — UCF",
+    location: "ORLANDO, FL",
+    dateRange: "DEC 2025 — JAN 2026",
+    bullets: [
+      "Built a digital twin for glovebox laboratory safety monitoring as part of a Department of Energy partnership, simulating 3,600+ timesteps of telemetry data.",
+      "Reduced 8+ system variables to a statistically validated feature set for anomaly modeling by applying regression analysis and variance inflation factor (VIF).",
+      "Detected sustained anomalies and achieved 0.9 ROC-AUC for short-horizon risk prediction by applying Isolation Forest with temporal persistence to telemetry data.",
+    ],
+  },
+  {
+    badge: "UNDERGRADUATE RESEARCH ASSISTANT",
+    org: "INSTITUTE OF ARTIFICIAL INTELLIGENCE — UCF",
+    location: "ORLANDO, FL",
+    dateRange: "FEB 2025 — PRESENT",
+    bullets: [
+      "Co-authored a paper submitted to NeurIPS 2026 alongside faculty advisors, contributing data visualizations to convey experiment results of freezing model layers.",
+      "Ran experiments on models spanning topological analysis, weight generation with and without fine-tuning, clustering, and layer changes across 100+ finetuning runs on the UCF ARCC cluster.",
+      "Delivered 45-minute presentations on peer-reviewed AI/ML papers, distilling complex methods into accessible insights for faculty and student researchers.",
+    ],
+  },
+  {
+    badge: "HONORS ORIENTATION AMBASSADOR",
+    org: "UCF BURNETT HONORS COLLEGE",
+    location: "ORLANDO, FL",
+    dateRange: "APR 2025 — PRESENT",
+    bullets: [
+      "Serve as a mentor for 15 incoming freshmen in the Honors program majoring in Computer Science.",
+      "Meet individually with each student through June to advise on courses, the honors curriculum, and answer questions about navigating UCF.",
+    ],
   },
 ];
 

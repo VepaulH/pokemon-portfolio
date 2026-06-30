@@ -16,24 +16,24 @@ export type PokemonCard = {
   gender?: "M" | "F" | null;
 };
 
-export const trainerName = "TRAINER";
+export const trainerName = "VEPAUL";
 
 export const opponentPokemon: PokemonCard = {
-  name: "PIKACHU",
-  level: 25,
-  hpCurrent: 60,
-  hpMax: 70,
-  gender: "M",
+  name: "GARDEVOIR",
+  level: 38,
+  hpCurrent: 95,
+  hpMax: 110,
+  gender: "F",
   spriteUrl:
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png",
 };
 
 export const playerPokemon: PokemonCard = {
-  name: "CHARIZARD",
-  level: 36,
-  hpCurrent: 104,
-  hpMax: 120,
+  name: "LUCARIO",
+  level: 42,
+  hpCurrent: 118,
+  hpMax: 130,
   gender: "M",
   spriteUrl:
-    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/6.png",
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/448.png",
 };

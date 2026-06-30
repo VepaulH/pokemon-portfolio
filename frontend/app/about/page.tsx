@@ -1,34 +1,28 @@
 import { CSSProperties } from "react";
 import { PageFrame } from "../_components/PageFrame";
-import { DialogBox } from "../_components/DialogBox";
 import { TrainerCardIcon } from "../_components/MenuIcons";
 
 const ACCENT = "var(--pkmn-about)";
 const ACCENT_DARK = "var(--pkmn-about-dark)";
 
 const trainer = {
-  name: "YOUR NAME",
-  title: "ASPIRING POKéMON MASTER / SOFTWARE ENGINEER",
-  hometown: "PALLET TOWN, KANTO",
-  age: "??",
-  startedJourney: "20XX",
-  favoriteType: "ELECTRIC",
+  name: "VEPAUL HARIPRASHAD",
+  title: "RETURNING @ BNY · FOUNDER @ ARCUS · RESEARCH @ UCF IAI",
+  hometown: "ORLANDO, FL",
+  age: "20",
+  startedJourney: "2024",
+  favoriteType: "DRAGON",
   contact: {
-    email: "you@example.com",
-    github: "github.com/yourhandle",
-    linkedin: "linkedin.com/in/yourhandle",
+    email: "vehcollege@gmail.com",
+    github: "github.com/VepaulH",
+    linkedin: "linkedin.com/in/vepaulh",
   },
 };
 
-const intro = [
-  "Hello there! Welcome to the world of PORTFOLIOS!",
-  "My name is OAK. People affectionately refer to me as the PORTFOLIO PROFESSOR!",
-  "But first, allow me to introduce you to my friend here...",
-];
-
 const bio = [
-  "Replace this with your story — where you started, what got you into building software, what you're chasing next.",
-  "Keep it human. One paragraph on your background, one on what excites you, one on what you're looking for next.",
+  "I'm a CS + Data Science student at UCF's Burnett Honors College (GPA: 3.88). Right now I'm building Arcus, a platform for student founders, while serving as VP of the American Statistical Association chapter at UCF — two roles that keep me equally close to code and to people.",
+  "This fall I'm returning to BNY, and I recently wrapped up AI research that's currently under review at NeurIPS. My work spans multi-agent systems, anomaly detection, and LLM weight analysis — I'm drawn to problems where the engineering decisions actually matter.",
+  "I'm looking for SWE or Data Science roles where I can keep building useful products and learning from people who've been doing this longer than I have. If you're working on something interesting in tech, data, or the student founder space, let's connect.",
 ];
 
 export default function AboutPage() {
@@ -40,14 +34,6 @@ export default function AboutPage() {
       accentDark={ACCENT_DARK}
       titleIcon={<TrainerCardIcon className="w-6 h-6" />}
     >
-      <div className="space-y-3">
-        {intro.map((line, i) => (
-          <DialogBox key={i} showContinueArrow={i === intro.length - 1}>
-            {line}
-          </DialogBox>
-        ))}
-      </div>
-
       <div className="grid gap-4 md:grid-cols-3">
         {/* Trainer card */}
         <aside className="pkmn-box px-5 py-4 md:col-span-1 flex flex-col gap-3 relative">
