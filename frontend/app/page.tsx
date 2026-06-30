@@ -55,9 +55,9 @@ export default function BattleScreen() {
     <>
       <HoennScene />
 
-      <div className="flex-1 flex items-center justify-center px-4 py-8">
+      <div className="flex-1 flex items-center justify-center px-4 py-3">
         {/* "3DS console" — battle window + controls stacked vertically, centered on the Hoenn scene */}
-        <div className="pkmn-console w-full max-w-[860px]">
+        <div className="pkmn-console w-full max-w-[760px]">
           {/* Battle window — 5:3 aspect ratio, matching the 3DS top screen */}
           <div className="pkmn-console-screen">
             <div
@@ -106,14 +106,14 @@ export default function BattleScreen() {
           </div>
 
           {/* Controls panel — dialog + colored menu (menu gets a touch more room) */}
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-9 gap-3">
-            <div className="sm:col-span-5">
+          <div className="mt-2 grid grid-cols-1 sm:grid-cols-9 gap-3">
+            <div className="sm:col-span-4">
               <DialogBox showContinueArrow>
                 What will{" "}
                 <span className="text-pkmn-accent-blue">{trainerName}</span> do?
               </DialogBox>
             </div>
-            <div className="sm:col-span-4">
+            <div className="sm:col-span-5">
               <MenuBox options={menuOptions} />
             </div>
           </div>
