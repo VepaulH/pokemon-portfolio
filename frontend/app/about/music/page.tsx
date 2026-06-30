@@ -17,25 +17,25 @@ const shelves: Shelf[] = [
     genre: "INDIE / INDIE ROCK",
     emoji: "🎸",
     artists: ["Backseat Lovers", "Wallows", "Her's", "The Strokes", "Malcolm Todd", "aron!", "TV Girl"],
-    note: "The go-to for coding sessions, long drives, and pretending life is a coming-of-age film.",
+    note: "The go-to for coding sessions, long drives, and late night grind sessions",
   },
   {
     genre: "J-POP & ANIME OSTs",
     emoji: "🎌",
     artists: ["YOASOBI", "anri", "Masayoshi Takanaka", "insaneintherainmusic"],
-    note: "Anime OSTs that hit differently: Black Clover, Naruto, Hunter x Hunter, Attack on Titan. insaneintherainmusic's jazz covers are criminally underrated.",
+    note: "Black Clover, Naruto, Hunter x Hunter, and Attack on Titan openings are amazing. insaneintherainmusic's jazz covers are also peak",
   },
   {
     genre: "EVERYTHING ELSE",
     emoji: "🎵",
     artists: ["Laufey", "Michael Jackson"],
-    note: "Laufey for late nights. MJ because some things are timeless.",
+    note: "Laufey and MJ because they're just both great.",
   },
   {
     genre: "ALSO PLAYS",
     emoji: "🎷",
-    artists: ["Alto Saxophone"],
-    note: "UCF Video Game Music Ensemble — 2 years performing video game and anime arrangements. If you've heard a sax cover of the AoT theme, that might've been me.",
+    artists: ["Tenor Saxophone", "Soprano Saxophone"],
+    note: "UCF Video Game Music Ensemble — 2 years performing video game and anime arrangements.",
   },
 ];
 

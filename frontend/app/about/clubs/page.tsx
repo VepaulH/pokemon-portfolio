@@ -28,7 +28,7 @@ const clubs: Club[] = [
     dates: "AUG 2024 — PRESENT",
     emoji: "🎷",
     description:
-      "Two years playing saxophone in UCF's VGM Ensemble — performing arrangements from iconic video game and anime soundtracks. From Zelda to Attack on Titan, if it has a melody, we've probably covered it.",
+      "Two years playing saxophone in UCF's VGM Ensemble — performing arrangements from iconic video game soundtracks. From Zelda to Pokemon, if it has a melody, we've probably covered it.",
   },
   {
     name: "UCF ROCK CLIMBING CLUB",
@@ -36,7 +36,7 @@ const clubs: Club[] = [
     dates: "AUG 2025 — PRESENT",
     emoji: "🧗",
     description:
-      "Joined the climbing club in my sophomore year and haven't looked down since. Currently climbing V5, working toward V6. The problem-solving mindset translates surprisingly well to debugging.",
+      "Joined the climbing club in my sophomore year and haven't looked down since (except for wrist injuries sadly). Currently climbing V5, working toward V6.",
   },
   {
     name: "KNIGHTHACKS",

@@ -27,7 +27,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <SakuraFall />
-        {children}
+        <div className="relative z-10 flex flex-col flex-1">
+          {children}
+        </div>
       </body>
     </html>
   );

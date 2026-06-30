@@ -39,10 +39,10 @@ export default function PokemonPage() {
           </header>
           <ul className="space-y-2 text-[11px] sm:text-[13px] leading-relaxed">
             {[
-              "Collection valued at approximately $1,500 — built over years of hunting and trading",
-              "Dedicated Lucario binder: full pages of Lucario cards from every era (photos coming soon)",
-              "Lucario is the favorite — the Steel/Fighting typing, the aura lore, the design. No contest.",
-              "Mix of vintage and modern sets across the binder",
+              "Collection valued at approximately $1,500 - built over years of hunting and trading",
+              "Dedicated Lucario page (photos coming soon)",
+              "If you could not tell, I like Lucario.",
+    
             ].map((b, i) => (
               <li key={i} className="flex gap-2">
                 <span aria-hidden style={{ color: ACCENT_DARK }} className="shrink-0">▸</span>

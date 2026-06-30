@@ -1,9 +1,7 @@
-"use client";
-
-import { CSSProperties, useState } from "react";
+import { CSSProperties } from "react";
 import { PageFrame } from "../_components/PageFrame";
-import { DialogBox } from "../_components/DialogBox";
 import { BadgeIcon } from "../_components/MenuIcons";
+import { OrgLogo } from "../_components/OrgLogo";
 
 const ACCENT = "var(--pkmn-exp)";
 const ACCENT_DARK = "var(--pkmn-exp-dark)";
@@ -111,30 +109,6 @@ const experiences: Experience[] = [
   },
 ];
 
-function OrgLogo({ domain, initial, accent }: { domain?: string; initial?: string; accent: string }) {
-  const [failed, setFailed] = useState(false);
-
-  if (domain && !failed) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={`https://logo.clearbit.com/${domain}`}
-        alt=""
-        onError={() => setFailed(true)}
-        className="w-10 h-10 rounded-md border-2 border-pkmn-box-border object-contain bg-white p-0.5 shrink-0"
-      />
-    );
-  }
-
-  return (
-    <span
-      className="inline-flex items-center justify-center w-10 h-10 rounded-md border-2 border-pkmn-box-border text-[14px] font-bold shrink-0"
-      style={{ background: accent, color: "white" }}
-    >
-      {initial ?? "?"}
-    </span>
-  );
-}
 
 export default function ExperiencePage() {
   return (

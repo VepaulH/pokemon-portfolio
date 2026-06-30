@@ -7,7 +7,7 @@ const ACCENT_DARK = "var(--pkmn-about-dark)";
 
 const trainer = {
   name: "VEPAUL HARIPRASHAD",
-  title: "RETURNING @ BNY · FOUNDER @ ARCUS · RESEARCH @ UCF IAI",
+  title: "SWE · FOUNDER · RESEARCHER",
   hometown: "ORLANDO, FL",
   age: "20",
   startedJourney: "2024",
@@ -93,9 +93,9 @@ export default function TrainerPage() {
 
 function Row({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex justify-between gap-3">
-      <dt className="text-pkmn-text-muted">{label}</dt>
-      <dd className="text-right break-all">{value}</dd>
+    <div className="flex justify-between gap-2">
+      <dt className="text-pkmn-text-muted shrink-0">{label}</dt>
+      <dd className="text-right break-words min-w-0">{value}</dd>
     </div>
   );
 }

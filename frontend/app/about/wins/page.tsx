@@ -33,27 +33,27 @@ const wins: Win[] = [
   },
   {
     title: "BENCH PRESS: 225 LBS",
-    subtitle: "Personal Record",
+    subtitle: "Athletic Achievement",
     emoji: "🏋️",
-    detail: "Hit a 225 lb bench press — a milestone that took consistent effort in the gym alongside a full course load and internships. Proof that the grind compounds outside of code too.",
+    detail: "Hit a 225 lb bench press - pretty self explanatory.",
   },
   {
     title: "TOP 500 — HYPIXEL BEDWARS",
     subtitle: "Gaming Achievement · 2021",
     emoji: "🎮",
-    detail: "Peaked top 500 on Hypixel BedWars leaderboards in 2021. Retired at the top. The competitive mindset from those days still shows up in hackathons.",
+    detail: "Peaked top 500 on Hypixel BedWars leaderboards in 2021. Maybe I played a bit too much.",
   },
   {
     title: "V5 CLIMBER",
     subtitle: "Athletic Achievement",
     emoji: "🧗",
-    detail: "Reached V5 grade in bouldering since joining the UCF Rock Climbing Club in August 2025. Working toward V5+ and V6. Every problem is a different algorithm to solve.",
+    detail: "Reached V5 grade in bouldering (in my gym). Working toward v6+.",
   },
   {
     title: "3× ALL-COUNTY BAND",
     subtitle: "Musical Achievement",
     emoji: "🎷",
-    detail: "Selected for All-County Band three times — a competitive honor awarded to top musicians across the county. A testament to years of dedication to the saxophone before bringing it to UCF's VGM Ensemble.",
+    detail: "Selected for All-County Band three times — a competitive honor awarded to top musicians across the county.",
   },
 ];
 

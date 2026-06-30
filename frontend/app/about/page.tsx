@@ -18,7 +18,7 @@ const ACCENT_DARK = "var(--pkmn-about-dark)";
 
 const menuOptions: [MenuOption, MenuOption, MenuOption, MenuOption] = [
   {
-    label: "TRAINER CARD",
+    label: "TRAINER",
     href: "/about/trainer",
     bg: "var(--pkmn-about)",
     dark: "var(--pkmn-about-dark)",

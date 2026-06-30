@@ -66,6 +66,7 @@ export function SakuraFall() {
   useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
+    if (!mounted) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -110,7 +111,7 @@ export function SakuraFall() {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [mounted]);
 
   if (!mounted) return null;
 
@@ -118,7 +119,7 @@ export function SakuraFall() {
     <canvas
       ref={canvasRef}
       className="pointer-events-none fixed inset-0"
-      style={{ zIndex: -5 }}
+      style={{ zIndex: 20 }}
       aria-hidden
     />
   );

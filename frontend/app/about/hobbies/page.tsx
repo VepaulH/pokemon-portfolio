@@ -32,9 +32,8 @@ export default function HobbiesPage() {
           <ul className="space-y-2 text-[11px] sm:text-[12px] leading-relaxed">
             {[
               "Current grade: V5 — working toward V6",
-              "Joined the UCF Rock Climbing Club in sophomore year",
-              "Drawn to the problem-solving aspect — every route is a puzzle",
-              "Favorite styles: slab and technical crimpy routes",
+              "Joined the UCF Rock Climbing Club in sophomore year",           
+              "Favorite styles: burly and strength-based problems",
             ].map((b, i) => (
               <li key={i} className="flex gap-2">
                 <span aria-hidden style={{ color: ACCENT_DARK }} className="shrink-0">▸</span>
@@ -66,9 +65,8 @@ export default function HobbiesPage() {
           <ul className="space-y-2 text-[11px] sm:text-[12px] leading-relaxed">
             {[
               "2 years performing with UCF's Video Game Music Ensemble",
-              "Repertoire spans Zelda, classic game OSTs, and anime soundtracks",
-              "Covers include Attack on Titan, Naruto, Hunter x Hunter, Black Clover",
-              "Favorite thing about VGM: the crowd already knows the melody",
+              "Repertoire spans Zelda, classic game OSTs, and other game soundtracks",
+              "Favorite thing about VGM: meeting other talented people with similar interests!",
             ].map((b, i) => (
               <li key={i} className="flex gap-2">
                 <span aria-hidden style={{ color: ACCENT_DARK }} className="shrink-0">▸</span>
@@ -82,6 +80,34 @@ export default function HobbiesPage() {
           >
             📸 PHOTO COMING SOON
           </div>
+        </article>
+
+        {/* Anime */}
+        <article className="pkmn-box px-5 py-4 relative flex flex-col gap-3">
+          <div className="pkmn-section-stripe absolute top-0 left-0 right-0 rounded-none" style={{ "--stripe": ACCENT } as CSSProperties} />
+          <header className="flex items-start gap-3 mt-1">
+            <span className="text-2xl inline-flex items-center justify-center w-10 h-10 rounded-md border-2 border-pkmn-box-border shrink-0" style={{ background: ACCENT, color: "white" }}>
+              📺
+            </span>
+            <div>
+              <h2 className="text-[12px] sm:text-[14px] tracking-wider">WATCHING ANIME</h2>
+              <p className="text-[10px] text-pkmn-text-muted mt-0.5">Lifelong fan</p>
+            </div>
+          </header>
+          <ul className="space-y-2 text-[11px] sm:text-[12px] leading-relaxed">
+            {[
+              "Naruto — the series that started it all",
+              "Attack on Titan — unmatched storytelling and world-building",
+              "Hunter x Hunter — favorite for its tactical depth and character writing",
+              "Oshi no Ko — blown away by the idol industry dark side take",
+              "Black Clover — love the never-give-up spirit and magic system",
+            ].map((b, i) => (
+              <li key={i} className="flex gap-2">
+                <span aria-hidden style={{ color: ACCENT_DARK }} className="shrink-0">▸</span>
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
         </article>
 
       </div>
