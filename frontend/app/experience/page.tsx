@@ -145,10 +145,6 @@ export default function ExperiencePage() {
       accentDark={ACCENT_DARK}
       titleIcon={<BadgeIcon className="w-6 h-6" />}
     >
-      <DialogBox>
-        Every badge tells a story. Tap into each one to see the moves learned
-        and the battles fought.
-      </DialogBox>
 
       <div className="grid gap-4 md:grid-cols-2">
         {experiences.map((exp, i) => (

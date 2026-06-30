@@ -49,6 +49,12 @@ const wins: Win[] = [
     emoji: "🧗",
     detail: "Reached V5 grade in bouldering since joining the UCF Rock Climbing Club in August 2025. Working toward V5+ and V6. Every problem is a different algorithm to solve.",
   },
+  {
+    title: "3× ALL-COUNTY BAND",
+    subtitle: "Musical Achievement",
+    emoji: "🎷",
+    detail: "Selected for All-County Band three times — a competitive honor awarded to top musicians across the county. A testament to years of dedication to the saxophone before bringing it to UCF's VGM Ensemble.",
+  },
 ];
 
 export default function WinsPage() {

@@ -117,8 +117,7 @@ export default function ProjectsPage() {
       titleIcon={<PokeballIcon className="w-6 h-6" />}
     >
       <DialogBox>
-        Each entry catalogs a project I&apos;ve caught — its type, its moves,
-        and what made it memorable.
+        Each entry catalogs a project I&apos;ve caught — check them out here!
       </DialogBox>
 
       <div className="grid gap-4 md:grid-cols-2">

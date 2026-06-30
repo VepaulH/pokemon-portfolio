@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const PETAL_COUNT = 28;
 
@@ -61,6 +61,9 @@ export function SakuraFall() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const petalsRef = useRef<Petal[]>([]);
   const rafRef = useRef<number>(0);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -109,10 +112,13 @@ export function SakuraFall() {
     };
   }, []);
 
+  if (!mounted) return null;
+
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-10"
+      className="pointer-events-none fixed inset-0"
+      style={{ zIndex: -5 }}
       aria-hidden
     />
   );

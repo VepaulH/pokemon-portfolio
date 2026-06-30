@@ -3,7 +3,6 @@ import { BattleHud } from "./_components/BattleHud";
 import { DialogBox } from "./_components/DialogBox";
 import { HoennScene } from "./_components/HoennScene";
 import { MenuBox, type MenuOption } from "./_components/MenuBox";
-import { SakuraFall } from "./_components/SakuraFall";
 import {
   BadgeIcon,
   LightningIcon,
@@ -55,7 +54,6 @@ export default function BattleScreen() {
   return (
     <>
       <HoennScene />
-      <SakuraFall />
 
       <div className="flex-1 flex items-center justify-center px-4 py-8">
         {/* "3DS console" — battle window + controls stacked vertically, centered on the Hoenn scene */}
