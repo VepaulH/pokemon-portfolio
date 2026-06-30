@@ -1,4 +1,6 @@
-import { CSSProperties } from "react";
+"use client";
+
+import { CSSProperties, useState } from "react";
 import { PageFrame } from "../_components/PageFrame";
 import { DialogBox } from "../_components/DialogBox";
 import { PokeballIcon } from "../_components/MenuIcons";
@@ -18,6 +20,8 @@ type Project = {
   types: string[];
   description: string;
   links?: { label: string; href: string }[];
+  logoDomain?: string;
+  logoInitial?: string;
 };
 
 const projects: Project[] = [
@@ -28,6 +32,7 @@ const projects: Project[] = [
     types: ["FOUNDER", "NEXT.JS", "TYPESCRIPT"],
     description:
       "Most student founders fail before they start due to a lack of network, structure, and resources. Arcus bridges that gap — connecting them with the right people and opportunities at every stage of their journey. Currently building and growing the platform from Orlando, FL.",
+    logoInitial: "A",
   },
   {
     no: "#002",
@@ -36,6 +41,7 @@ const projects: Project[] = [
     types: ["NEXT.JS", "TYPESCRIPT", "FASTAPI", "QDRANT"],
     description:
       "Built foundational frontend features including login/signup, profile management, search history, and interactive search controls. Curated 1,000+ audio samples and developed a demo-ready platform for 50+ testers built around CLAP audio/text embeddings and Qdrant vector search.",
+    logoInitial: "O",
   },
   {
     no: "#003",
@@ -45,6 +51,7 @@ const projects: Project[] = [
     description:
       "Architected an orchestration agent that classifies user queries by category (financial, sports, culture) and routes them to specialized agents. Implemented real-time Browserbase scraping pipelines with Redis caching; independently built the orchestrator and two of three category agents at UC Berkeley AI Hackathon 2026.",
     links: [{ label: "CODE", href: "https://github.com/VepaulH" }],
+    logoInitial: "S",
   },
 ];
 
@@ -63,6 +70,31 @@ const typeColors: Record<string, string> = {
   "FETCH.AI": "bg-pkmn-accent-blue text-white",
   FOUNDER: "bg-pkmn-hp-yellow text-pkmn-text",
 };
+
+function ProjectLogo({ domain, initial }: { domain?: string; initial?: string }) {
+  const [failed, setFailed] = useState(false);
+
+  if (domain && !failed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={`https://logo.clearbit.com/${domain}`}
+        alt=""
+        onError={() => setFailed(true)}
+        className="w-10 h-10 rounded-md border-2 border-pkmn-box-border object-contain bg-white p-0.5 shrink-0"
+      />
+    );
+  }
+
+  return (
+    <span
+      className="inline-flex items-center justify-center w-10 h-10 rounded-md border-2 border-pkmn-box-border text-[14px] font-bold shrink-0"
+      style={{ background: ACCENT, color: "white" }}
+    >
+      {initial ?? "?"}
+    </span>
+  );
+}
 
 export default function ProjectsPage() {
   return (
@@ -88,22 +120,18 @@ export default function ProjectsPage() {
               className="pkmn-section-stripe absolute top-0 left-0 right-0 rounded-none"
               style={{ "--stripe": ACCENT } as CSSProperties}
             />
-            <header className="flex items-baseline justify-between gap-2 mt-1">
-              <h2 className="text-[12px] sm:text-[14px] tracking-wider flex items-center gap-2">
-                <span
-                  className="inline-flex items-center justify-center w-7 h-7 rounded-md border-2 border-pkmn-box-border"
-                  style={{ background: ACCENT, color: "white" }}
-                >
-                  <PokeballIcon className="w-4 h-4" />
-                </span>
-                <span className="text-pkmn-text-muted">{p.no}</span>
-                <span>{p.name}</span>
-              </h2>
+            <header className="flex items-start gap-3 mt-1">
+              <ProjectLogo domain={p.logoDomain} initial={p.logoInitial} />
+              <div className="min-w-0">
+                <h2 className="text-[11px] sm:text-[13px] tracking-wider leading-snug flex items-center gap-1.5">
+                  <span className="text-pkmn-text-muted">{p.no}</span>
+                  <span>{p.name}</span>
+                </h2>
+                <p className="mt-0.5 text-[10px] sm:text-[11px] italic text-pkmn-text-muted leading-snug">
+                  {p.tagline}
+                </p>
+              </div>
             </header>
-
-            <p className="text-[11px] sm:text-[13px] italic text-pkmn-text-muted">
-              {p.tagline}
-            </p>
 
             <div className="flex flex-wrap gap-1.5">
               {p.types.map((t) => (
@@ -118,12 +146,12 @@ export default function ProjectsPage() {
               ))}
             </div>
 
-            <p className="text-[11px] sm:text-[13px] leading-relaxed">
+            <p className="text-[11px] sm:text-[13px] leading-relaxed flex-1">
               {p.description}
             </p>
 
             {p.links && p.links.length > 0 && (
-              <div className="mt-1 flex flex-wrap gap-2">
+              <div className="mt-auto flex flex-wrap gap-2">
                 {p.links.map((l) => (
                   <a
                     key={l.label}
