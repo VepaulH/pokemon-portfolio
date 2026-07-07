@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import { BattleGrass } from "./_components/BattleGrass";
 import { BattleHud } from "./_components/BattleHud";
+import { CardModal } from "./_components/CardModal";
 import { DialogBox } from "./_components/DialogBox";
 import { HoennScene } from "./_components/HoennScene";
 import { MenuBox, type MenuOption } from "./_components/MenuBox";
@@ -50,9 +54,21 @@ const menuOptions: [MenuOption, MenuOption, MenuOption, MenuOption] = [
   },
 ];
 
+type Modal = { image: string; message: string; large?: boolean } | null;
+
 export default function BattleScreen() {
+  const [modal, setModal] = useState<Modal>(null);
+
   return (
     <>
+      {modal && (
+        <CardModal
+          image={modal.image}
+          message={modal.message}
+          large={modal.large}
+          onClose={() => setModal(null)}
+        />
+      )}
       <HoennScene />
 
       <div className="flex-1 flex items-center justify-center px-4 py-3">
@@ -78,7 +94,8 @@ export default function BattleScreen() {
                 <img
                   src={opponentPokemon.spriteUrl}
                   alt={opponentPokemon.name}
-                  className="pixelated relative z-10 w-20 h-20 sm:w-24 sm:h-24 drop-shadow-[2px_3px_0_rgba(0,0,0,0.3)]"
+                  className="pixelated relative z-10 w-20 h-20 sm:w-24 sm:h-24 drop-shadow-[2px_3px_0_rgba(0,0,0,0.3)] cursor-pointer"
+                  onClick={() => setModal({ image: "/Gardevoir.jpg", message: "YOU FOUND MY EASTER EGG! HERE'S MY FAV GARDEVOIR CARD 🎴" })}
                 />
                 <div className="-mt-7 sm:-mt-8 w-28 h-7 sm:w-32 sm:h-8">
                   <div className="pkmn-platform" />
@@ -91,7 +108,8 @@ export default function BattleScreen() {
                 <img
                   src={playerPokemon.spriteUrl}
                   alt={playerPokemon.name}
-                  className="pixelated relative z-10 w-28 h-28 sm:w-36 sm:h-36 drop-shadow-[2px_3px_0_rgba(0,0,0,0.3)]"
+                  className="pixelated relative z-10 w-28 h-28 sm:w-36 sm:h-36 drop-shadow-[2px_3px_0_rgba(0,0,0,0.3)] cursor-pointer"
+                  onClick={() => setModal({ image: "/Lucario_Pages.jpg", message: "LUCARIO COLLECTION:", large: true })}
                 />
                 <div className="-mt-4 w-32 h-7 sm:w-40 sm:h-8">
                   <div className="pkmn-platform" />

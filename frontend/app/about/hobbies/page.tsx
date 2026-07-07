@@ -96,7 +96,7 @@ export default function HobbiesPage() {
           </header>
           <ul className="space-y-2 text-[11px] sm:text-[12px] leading-relaxed">
             {[
-              "Favorite type: shonen — action, growth, and never-give-up energy",
+              "Favorite type: shonen",
               "Favorites: Attack on Titan, Black Clover, and Hunter x Hunter",
               "Currently watching: Vinland Saga and Naruto",
             ].map((b, i) => (

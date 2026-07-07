@@ -1,4 +1,7 @@
-import { CSSProperties } from "react";
+"use client";
+
+import { CSSProperties, useState } from "react";
+import { CardModal } from "../../_components/CardModal";
 import { PageFrame } from "../../_components/PageFrame";
 import { PokedexIcon } from "../../_components/MenuIcons";
 
@@ -14,7 +17,18 @@ const games = [
 ];
 
 export default function PokemonPage() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
+    <>
+    {showModal && (
+      <CardModal
+        image="/Lucario_Pages.jpg"
+        message="LUCARIO COLLECTION:"
+        large
+        onClose={() => setShowModal(false)}
+      />
+    )}
     <PageFrame
       title="POKéDEX"
       subtitle="TRAINER'S COLLECTION & GAME HISTORY"
@@ -40,7 +54,7 @@ export default function PokemonPage() {
           <ul className="space-y-2 text-[11px] sm:text-[13px] leading-relaxed">
             {[
               "Collection valued at approximately $1,500 - built over years of hunting and trading",
-              "Dedicated Lucario page (photos coming soon)",
+              "Dedicated Lucario page:",
               "If you could not tell, I like Lucario.",
     
             ].map((b, i) => (
@@ -50,10 +64,11 @@ export default function PokemonPage() {
               </li>
             ))}
           </ul>
-          {/* Lucario photo placeholder */}
-          <div
-            className="mt-2 w-full h-40 rounded flex flex-col items-center justify-center gap-2 text-[10px] text-pkmn-text-muted"
+          {/* Lucario card easter egg */}
+          <button
+            className="mt-2 w-full h-40 rounded flex flex-col items-center justify-center gap-2 text-[10px] text-pkmn-text-muted cursor-pointer hover:opacity-80 transition-opacity"
             style={{ background: "var(--pkmn-box-inner)", border: `2px dashed ${ACCENT_DARK}` }}
+            onClick={() => setShowModal(true)}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -61,8 +76,8 @@ export default function PokemonPage() {
               alt="Lucario"
               className="pixelated w-16 h-16 opacity-40"
             />
-            <span>LUCARIO BINDER PHOTOS COMING SOON</span>
-          </div>
+            <span>??? CLICK TO REVEAL ???</span>
+          </button>
         </article>
 
         {/* Games played */}
@@ -94,5 +109,6 @@ export default function PokemonPage() {
 
       </div>
     </PageFrame>
+    </>
   );
 }
