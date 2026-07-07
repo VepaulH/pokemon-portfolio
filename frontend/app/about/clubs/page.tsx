@@ -41,7 +41,7 @@ const clubs: Club[] = [
   {
     name: "KNIGHTHACKS",
     role: "MEMBER / HACKATHON PARTICIPANT",
-    dates: "OCT 2025",
+    dates: "AUG 2024 — PRESENT",
     emoji: "⚔️",
     description:
       "Competed in KnightHacks VIII — UCF's flagship hackathon — where my team built TouchGrass, a nature scavenger hunt powered by Google Gemini's image recognition API over 36 hours.",

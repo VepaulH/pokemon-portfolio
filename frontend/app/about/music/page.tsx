@@ -26,12 +26,6 @@ const shelves: Shelf[] = [
     note: "Black Clover, Naruto, Hunter x Hunter, and Attack on Titan openings are amazing. insaneintherainmusic's jazz covers are also peak",
   },
   {
-    genre: "EVERYTHING ELSE",
-    emoji: "🎵",
-    artists: ["Laufey", "Michael Jackson"],
-    note: "Laufey and MJ because they're just both great.",
-  },
-  {
     genre: "ALSO PLAYS",
     emoji: "🎷",
     artists: ["Tenor Saxophone", "Soprano Saxophone"],

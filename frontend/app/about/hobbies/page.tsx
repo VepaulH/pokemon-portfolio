@@ -91,16 +91,14 @@ export default function HobbiesPage() {
             </span>
             <div>
               <h2 className="text-[12px] sm:text-[14px] tracking-wider">WATCHING ANIME</h2>
-              <p className="text-[10px] text-pkmn-text-muted mt-0.5">Lifelong fan</p>
+              <p className="text-[10px] text-pkmn-text-muted mt-0.5">2 years watching · Shonen fan</p>
             </div>
           </header>
           <ul className="space-y-2 text-[11px] sm:text-[12px] leading-relaxed">
             {[
-              "Naruto — the series that started it all",
-              "Attack on Titan — unmatched storytelling and world-building",
-              "Hunter x Hunter — favorite for its tactical depth and character writing",
-              "Oshi no Ko — blown away by the idol industry dark side take",
-              "Black Clover — love the never-give-up spirit and magic system",
+              "Favorite type: shonen — action, growth, and never-give-up energy",
+              "Favorites: Attack on Titan, Black Clover, and Hunter x Hunter",
+              "Currently watching: Vinland Saga and Naruto",
             ].map((b, i) => (
               <li key={i} className="flex gap-2">
                 <span aria-hidden style={{ color: ACCENT_DARK }} className="shrink-0">▸</span>
