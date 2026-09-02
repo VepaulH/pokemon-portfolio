@@ -16,11 +16,11 @@ type Club = {
 const clubs: Club[] = [
   {
     name: "AMERICAN STATISTICAL ASSOCIATION — UCF",
-    role: "VICE PRESIDENT",
+    role: "PRESIDENT",
     dates: "PRESENT",
     emoji: "📊",
     description:
-      "Helping lead the UCF chapter of the ASA — organizing events, connecting members with data science resources, and bridging the gap between stats coursework and real-world applications.",
+      "Leading the UCF chapter of the ASA — setting the direction for events, connecting members with data science resources, and bridging the gap between stats coursework and real-world applications.",
   },
   {
     name: "UCF VIDEO GAME MUSIC ENSEMBLE",

@@ -32,12 +32,6 @@ const wins: Win[] = [
     detail: "Invited back for a second Software Engineer internship at Bank of New York (Fall 2026) after delivering a multi-agent incident response system that was presented to 50+ BNY employees in the spring term.",
   },
   {
-    title: "BENCH PRESS: 225 LBS",
-    subtitle: "Athletic Achievement",
-    emoji: "🏋️",
-    detail: "Hit a 225 lb bench press - pretty self explanatory.",
-  },
-  {
     title: "TOP 500 — HYPIXEL BEDWARS",
     subtitle: "Gaming Achievement · 2021",
     emoji: "🎮",

@@ -26,7 +26,7 @@ const experiences: Experience[] = [
     badge: "SOFTWARE ENGINEER INTERN",
     org: "BANK OF NEW YORK",
     location: "ORLANDO, FL",
-    dateRange: "JUN 2026 — PRESENT",
+    dateRange: "AUG 2026 — PRESENT",
     logoDomain: "bny.com",
     logoInitial: "B",
     bullets: [
@@ -34,21 +34,10 @@ const experiences: Experience[] = [
     ],
   },
   {
-    badge: "FOUNDER",
-    org: "ARCUS",
-    location: "ORLANDO, FL",
-    dateRange: "JUN 2026 — PRESENT",
-    logoInitial: "A",
-    bullets: [
-      "Building a platform for student founders that connects them with the right people, tools, and opportunities at every stage of their journey.",
-      "Identified the core problem: most student founders fail before they start due to a lack of network, structure, and resources to execute.",
-    ],
-  },
-  {
     badge: "EXTERN",
     org: "SERVICENOW",
     location: "REMOTE",
-    dateRange: "JUN 2026 — PRESENT",
+    dateRange: "JUN 2026 — JUL 2026",
     logoDomain: "servicenow.com",
     logoInitial: "S",
     bullets: [
@@ -86,7 +75,7 @@ const experiences: Experience[] = [
     badge: "UNDERGRADUATE RESEARCH ASSISTANT",
     org: "INSTITUTE OF ARTIFICIAL INTELLIGENCE — UCF",
     location: "ORLANDO, FL",
-    dateRange: "FEB 2025 — PRESENT",
+    dateRange: "FEB 2025 — JUN 2026",
     logoDomain: "ucf.edu",
     logoInitial: "U",
     bullets: [
@@ -99,7 +88,7 @@ const experiences: Experience[] = [
     badge: "HONORS ORIENTATION AMBASSADOR",
     org: "UCF BURNETT HONORS COLLEGE",
     location: "ORLANDO, FL",
-    dateRange: "APR 2025 — PRESENT",
+    dateRange: "APR 2025 — JUL 2026",
     logoDomain: "ucf.edu",
     logoInitial: "U",
     bullets: [

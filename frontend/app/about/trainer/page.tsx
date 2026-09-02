@@ -7,7 +7,7 @@ const ACCENT_DARK = "var(--pkmn-about-dark)";
 
 const trainer = {
   name: "VEPAUL HARIPRASHAD",
-  title: "SWE · FOUNDER · RESEARCHER",
+  title: "SWE · RESEARCHER · ASA PRESIDENT",
   hometown: "ORLANDO, FL",
   age: "20",
   startedJourney: "2024",
@@ -20,7 +20,7 @@ const trainer = {
 };
 
 const bio = [
-  "I'm a CS + Data Science student at UCF's Burnett Honors College (GPA: 3.88). Right now I'm building Arcus, a platform for student founders, while serving as VP of the American Statistical Association chapter at UCF — two roles that keep me equally close to code and to people.",
+  "I'm a CS + Data Science student at UCF's Burnett Honors College (GPA: 3.88). Right now I'm serving as President of the American Statistical Association chapter at UCF — a role that keeps me equally close to code and to people.",
   "This fall I'm returning to BNY, and I recently wrapped up AI research that's currently under review at NeurIPS. My work spans multi-agent systems, anomaly detection, and LLM weight analysis — I'm drawn to problems where the engineering decisions actually matter.",
   "I'm looking for SWE or Data Science roles where I can keep building useful products and learning from people who've been doing this longer than I have. If you're working on something interesting in tech, data, or the student founder space, let's connect.",
 ];

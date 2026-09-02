@@ -72,8 +72,8 @@ export default function MusicPage() {
               ))}
             </div>
 
-            <p className="text-[11px] sm:text-[12px] leading-relaxed text-pkmn-text-muted italic flex-1">
-              &ldquo;{shelf.note}&rdquo;
+            <p className="text-[11px] sm:text-[12px] leading-relaxed text-pkmn-text-muted flex-1">
+              {shelf.note}
             </p>
           </article>
         ))}

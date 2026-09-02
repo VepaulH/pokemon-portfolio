@@ -26,13 +26,12 @@ type Project = {
 const projects: Project[] = [
   {
     no: "#001",
-    name: "ARCUS",
-    tagline: "A platform connecting student founders with people, tools, and opportunities.",
-    types: ["FOUNDER", "NEXT.JS", "TYPESCRIPT"],
+    name: "GREENCART",
+    tagline: "Product comparison pipeline built in 12 hours — price, nutrition, and environment.",
+    types: ["PYTHON", "SERPAPI", "OPEN FOOD FACTS API"],
     description:
-      "Most student founders fail before they start due to a lack of network, structure, and resources. Arcus bridges that gap — connecting them with the right people and opportunities at every stage of their journey. Currently building and growing the platform from Orlando, FL.",
-    logoInitial: "A",
-    links: [{ label: "CODE", href: "https://github.com/VepaulH/arcus" }],
+      "A data pipeline built in 12 hours with a team of four to help shoppers compare products across retailers on more than just price. I owned the data layer end-to-end — aggregating 1,000+ product listings from Walmart, Target, and Publix, then enriching each item with nutritional and environmental data via the Open Food Facts API, and designing the schema that let inconsistent data from three retailers be compared consistently.",
+    logoInitial: "G",
   },
   {
     no: "#002",
@@ -82,6 +81,8 @@ const typeColors: Record<string, string> = {
   FOUNDER: "bg-pkmn-hp-yellow text-pkmn-text",
   "GEMINI API": "bg-pkmn-accent-blue text-white",
   JAVASCRIPT: "bg-pkmn-hp-yellow text-pkmn-text",
+  SERPAPI: "bg-pkmn-grass-dark text-white",
+  "OPEN FOOD FACTS API": "bg-pkmn-hp-green text-pkmn-text",
 };
 
 
